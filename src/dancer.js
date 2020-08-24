@@ -10,8 +10,7 @@ var Dancer = function(top, left, timeBetweenSteps) {
 };
 
 Dancer.prototype.step = function() {
-  let that = this;
-  setTimeout(function() { return that.step(); }, this.timeBetweenSteps);
+  setTimeout(() => { return this.step(); }, this.timeBetweenSteps); // arrow function cancels the assignment of this keyword to wrapper function
 };
 
 
