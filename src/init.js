@@ -1,7 +1,7 @@
-$(document).ready(function() {
+$(document).ready(function () {
   window.dancers = [];
 
-  $('.addDancerButton').on('click', function(event) {
+  $('.addDancerButton').on('click', function (event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
      * As long as the "data-dancer-maker-function-name" attribute of a
@@ -27,4 +27,29 @@ $(document).ready(function() {
     );
     $('.dancer').append(dancer.$node);
   });
+
+  $('button').on('click', function (event) {
+    event.preventDefault(); // stops page refreshing
+    var dancers = $('.dancer').detach();
+    dancers = Array.from(dancers[0].children);
+    for (var i = 0; i < dancers.length; i++) {
+      $('.dancefloor').append(dancers[i]);
+    }
+
+  });
+
+  $('img').on('mouseover', function (event) {
+    $(this).css(("height", "300px"));
+  });
+
+  // $('img').hover(function () {
+  //   console.log("triggered");
+  //   $(this).css("height", "200px");
+  //   console.log(this);
+  // });
+
+  // // document.getElementById('hide_me').addEventListener('click', function () {
+  // //   this.style.display = 'none';
+  // // });
+
 });
