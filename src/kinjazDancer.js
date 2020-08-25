@@ -1,6 +1,6 @@
-var Kinjaz = function(top, left, timeBetweenSteps) {
+var Kinjaz = function (top, left, timeBetweenSteps) {
   UrbanDancer.call(this);
-  this.$node = '<img src=' + this.dancers['kinjaz'] + ' height=300px></img>';
+  this.$node = '<img src=' + this.dancers['kinjaz'] + '></img>';
 };
 
 Kinjaz.prototype = Object.create(UrbanDancer.prototype);
