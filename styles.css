@@ -1,8 +1,9 @@
 body, html{
   height:100%;
+  font-family: 'Montserrat', sans-serif;
 }
 body{
-  background-image: url(img/background/diva.jpg);
+  background-image: url(img/background/nightclub.jpg);
   background-size: 100% 100%;
   margin: 0px;
   background-color: black;
@@ -13,40 +14,63 @@ body, a:link, a:visited, a:active{
 }
 img {
   height: 150px;
+  position: relative;
 }
 img:hover {
   transform: scale(1.5);
   border: pink;
   border-width: 10px;
 }
+.addDancerButton{
+  margin: 10px 5px 5px 0px;
+  border-radius: 5px;
+  height: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
 .gap{
-  height: 50vh;
+  height: 0px;
   width: 100%;
 }
-.title, .addDancerButton{
+.lineup-btn {
+  font-size: 20px;
+  height: 50px;
+  width: 150px;
+  border-radius: 50px;
+  /* text-align: center; */
+}
+.title{
   padding:5px 12px;
   float:right;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  margin-top: 7px;
+  margin-left: 25px;
 }
 .topbar{
-  height:32px;
+  height:60px;
   background-color: #440047;
+  text-align: right;
 }
 .title{
   position: absolute;
   left: 0;
   background-color: black;
 }
-.dancer{
-  border:10px solid skyblue;
-  border-radius:10px;
-  position: absolute;
+.dancefloor{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;s
+}
+.dancespace{
+  height: 80vh;
+  width: 100vw;
 }
 footer{
   position: fixed;
-  bottom: 0;
+  display: inline;
   width: 100%;
-  height: 30px;
-}
-.dancefloor{
-  position: sticky;
+  bottom: 5px;
+  left: 5px;
+  height: 50px;
 }

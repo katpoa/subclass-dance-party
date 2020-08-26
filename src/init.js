@@ -1,5 +1,6 @@
 $(document).ready(function () {
   window.dancers = [];
+  window.music = false;
 
   $('.addDancerButton').on('click', function (event) {
     /* This function sets up the click handlers for the create-dancer
@@ -19,21 +20,34 @@ $(document).ready(function () {
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
+    // start the music
+    if (!window.music) {
+      dancerMakerFunctionName !== 'KpopDancer' ? $('#rnb')[0].play() : $('#kpop')[0].play();
+      window.music = true;
+    }
     // make a dancer with a random position
     var dancer = new dancerMakerFunction(
       $('body').height() * Math.random(),
       $('body').width() * Math.random(),
-      Math.random() * 1000
+      (Math.random() * 1000) + 500
     );
-    $('.dancer').append(dancer.$node);
+    $('.dancespace').append(dancer.$node);
   });
 
-  $('button').on('click', function (event) {
+  $('.lineup-btn').on('click', function (event) {
     event.preventDefault(); // stops page refreshing
-    var dancers = $('.dancer').detach();
-    dancers = Array.from(dancers[0].children);
-    for (var i = 0; i < dancers.length; i++) {
-      $('.dancefloor').append(dancers[i]);
+    var dancers = $('.dancespace').detach();
+    let dancersArray = Array.from(dancers[0].children);
+    $('.gap').css('height', '80vh');
+    for (var i = 0; i < dancersArray.length; i++) {
+      let newImg = $(dancersArray[i]);
+      var styleSettings = {
+        position: 'static'
+      };
+      newImg.css(styleSettings); //stop toggle,
+      $('.dancefloor').append(newImg);
+      // $('.gap).css(height = 80vh);
+      //add gap's 80vh back to css
     }
 
   });
