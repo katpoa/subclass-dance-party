@@ -15,11 +15,12 @@ body, a:link, a:visited, a:active{
 img {
   height: 150px;
   position: relative;
+  margin: 10px;
 }
 img:hover {
   transform: scale(1.5);
-  border: pink;
-  border-width: 10px;
+  border: dotted yellow;
+  border-width: 15px;
 }
 .addDancerButton{
   margin: 10px 5px 5px 0px;
@@ -63,7 +64,7 @@ img:hover {
   flex-wrap: wrap;s
 }
 .dancespace{
-  height: 80vh;
+  height: 60vh;
   width: 100vw;
 }
 footer{

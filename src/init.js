@@ -38,7 +38,7 @@ $(document).ready(function () {
     event.preventDefault(); // stops page refreshing
     var dancers = $('.dancespace').detach();
     let dancersArray = Array.from(dancers[0].children);
-    $('.gap').css('height', '80vh');
+    $('.gap').css('height', '60vh');
     for (var i = 0; i < dancersArray.length; i++) {
       let newImg = $(dancersArray[i]);
       var styleSettings = {
